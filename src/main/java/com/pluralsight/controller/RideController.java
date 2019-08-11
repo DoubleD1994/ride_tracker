@@ -34,4 +34,14 @@ public class RideController {
 		return rideService.getRide(id);
 	}
 	
+	@RequestMapping(value = "/ride", method = RequestMethod.PUT)
+	public @ResponseBody Ride updateRide(@RequestBody Ride ride) {
+		return rideService.updateRide(ride);
+	}
+	
+	@RequestMapping(value = "/batch", method = RequestMethod.GET)
+	public @ResponseBody Object batch() {
+		rideService.batch();
+		return null;
+	}
 }
