@@ -39,7 +39,6 @@ public class RideServiceImpl implements RideService {
 	}
 
 	@Override
-	@Transactional
 	public void batch() {
 		List<Ride> rides = rideRepository.getRides();
 		List<Object[]> pairs = new ArrayList<>();
