@@ -60,5 +60,10 @@ public class RideRepositoryImpl implements RideRepository {
 	public void updateRides(List<Object[]> pairs) {
 		jdbcTemplate.batchUpdate("UPDATE ride SET ride_date = ? where id = ?", pairs);
 	}
+
+	@Override
+	public void deleteRide(Integer id) {
+		jdbcTemplate.update("DELETE FROM ride WHERE id = ?", id);
+	}
 	
 }
